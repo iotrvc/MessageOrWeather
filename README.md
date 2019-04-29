@@ -5,12 +5,12 @@
 
 [Click Here](https://particle.hackster.io/yatinagarwal/light-detecting-email-sender-db18f4)
 
-## Light Sensor with Particle Photon
+## LED - Show Message or Local Weather 
 
 Required Parts:
 <br>- Particle Photon
-<br>- Photo Sensor
-<br>- Resistor
+<br>- LED Module [link](https://www.amazon.com/gp/product/B01EJ1AFW8/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
+<br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 <!---
 [link](https://docs.particle.io/tutorials/hardware-projects/maker-kit/#tutorial-3-conference-room-monitor)
 --->
@@ -43,24 +43,37 @@ Should look like this
 <br>
 <hr>
 
-### Step 3: Setup Push Notifications
-To receive your push notification there is a little setup if you’ve never done it before, but once you do you’ll never have to touch it again. There are a ton of services you could use, but the one I like is Pushover.net. 
+### Step 3: Setup BLYNK APP
 
-- Setup an account with [Pushover.net](https://pushover.net/) then follow these instructions:
-- Follow below steps (see below image)
+- Download iOS or Android App and setup account on BLYNK (link)[https://blynk.io/en/getting-started]
+- Create New Project Named: LED
+- Add Terminal at Top
+- Add 2 Buttons Below Terminal
+  Should look like below:
+  
 
-￼<img src="8.jpg" width="500">
+Program each object
+- Tap on Terminal 
+  * Change Label to: Message
+  * Change input to V1
+  * Tap OK
+- Tap of Button1 
+  * Change label to: Temp/Text
+  * Change output ot V1, 0 in first box and 1 in second box to right of V2
+  * Mode Switch
+  * On/Off Labels
+    Left: Temp
+    Right: Text
+- Tap of Button2
+  * Change label to: Power
+  * Change output ot V3, 4 in first box and 3 in second box to right of V3
+  * Mode Switch
+  * On/Off Labels
+    Left: Turn On
+    Right: Text Off
+  
 
-￼<img src="7.jpg" width="500">
-
-- Click on the Pushover logo to get to your dashboard.
-- Copy your User Key. This is the value for the the user query field below.
-- Add a device that is going to receive these push notifications. Primarily an iOS or Android phone/tablet… whatever you can download the Pushover app to.
-- Send a test message and make sure it’s working!
-- Register an application named exceedlight. 
-- When you are done click on the application’s name from step 5 and copy the API Token/Key from that page. This is the value for the token query field below.
-
-<hr>
+       
 
 ### Step 4: Create a WebHook
 
