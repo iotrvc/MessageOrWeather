@@ -71,9 +71,9 @@ Program each object
   * On/Off Labels
     Left: Turn On
     Right: Text Off
+- Tab Octagon icon 
+  * Tap email to send Auth Token (We will use later)
   
-
-       
 
 ### Step 4: Create a WebHook
 
