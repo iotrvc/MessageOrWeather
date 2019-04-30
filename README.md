@@ -1,19 +1,12 @@
-## RESET PHOTONS
-[reset photon](https://docs.particle.io/tutorials/device-os/led/core/#safe-mode)
-
-# Project2
-
-[Click Here](https://particle.hackster.io/yatinagarwal/light-detecting-email-sender-db18f4)
-
 ## LED - Show Message or Local Weather 
 
 Required Parts:
 <br>- Particle Photon
 <br>- LED Module [link](https://www.amazon.com/gp/product/B01EJ1AFW8/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 <br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
-<!---
-[link](https://docs.particle.io/tutorials/hardware-projects/maker-kit/#tutorial-3-conference-room-monitor)
---->
+
+### RESET PHOTONS
+[reset photon](https://docs.particle.io/tutorials/device-os/led/core/#safe-mode)
 
 ### Step 1: Set up your Photon
 - Using Your Computer: Go to particle.io/setup and follow the instructions to create an account and set up your Photon.
