@@ -39,7 +39,7 @@ Resistor Pin  | Photon Pin
 
 Should look like this
 
-<img src="2.jpg" width="500">
+<img src="ytql18cMRfuZ10OypBj6Pw.jpg" width="500">
 <br>
 <hr>
 
