@@ -71,6 +71,8 @@ Sensor Pin  | Photon Pin
 - Title: LED
 - Add Libraries blynk and ledmatrix-max7219-max7221
 - Paste Below Code
+
+
 ```
 
 // This #include statement was automatically added by the Particle IDE.
@@ -113,9 +115,6 @@ void drawText(String s, int x)
     led->drawChar(x + i*(fontWidth+space), y, s[i], true, false, 1);
   }
 }
-
-
-
 
 void setup() {
   Blynk.begin(auth);   // setup Blynk 
@@ -233,6 +232,7 @@ void loop() {
 
 
 ```
+
 - Click Save
 - Click Flash
 
