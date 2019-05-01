@@ -38,6 +38,7 @@ Sensor Pin  | Photon Pin
 <img src="IMG_B2025C952C3F-1.jpeg" width="500">
 <br>
 - Tab Octagon icon 
+  * Add Photon Device
   * Tap email to send Auth Token (We will use later)
   
 
