@@ -239,7 +239,9 @@ void loop() {
 That’s It! You should now be able to comntrol LED with Blynk App
 
 Text = type messaage
+
 Weather = View Rockford Weather
+
 Turn Off = Put in low power mode for 5 minutes
 
 
