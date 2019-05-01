@@ -20,17 +20,13 @@ Required Parts:
 - Connect your sensor to a digital or analog input on the Photon. Follow these examples for hooking up common sensors.
 ```
 Sensor Pin  | Photon Pin
-       pin1 | A0 
-       pin2 | A5
-       OUT  | D0 
-       
-Resistor Pin  | Photon Pin
-         pin1 | A0 
-         pin2 | GRND
+       VCC | VIN
+       GND | GND
+       CLK | D1 
+       CS  | D2 
+       DN  | D3 
 ```
 #### Set up the hardware
-
-Should look like this
 
 <img src="ytql18cMRfuZ10OypBj6Pw.jpg" width="500">
 <br>
@@ -39,31 +35,7 @@ Should look like this
 ### Step 3: Setup BLYNK APP
 
 - Download iOS or Android App and setup account on BLYNK (link)[https://blynk.io/en/getting-started]
-- Create New Project Named: LED
-- Add Terminal at Top
-- Add 2 Buttons Below Terminal
-  Should look like below:
-  
 
-Program each object
-- Tap on Terminal 
-  * Change Label to: Message
-  * Change input to V1
-  * Tap OK
-- Tap of Button1 
-  * Change label to: Temp/Text
-  * Change output ot V1, 0 in first box and 1 in second box to right of V2
-  * Mode Switch
-  * On/Off Labels
-    Left: Temp
-    Right: Text
-- Tap of Button2
-  * Change label to: Power
-  * Change output ot V3, 4 in first box and 3 in second box to right of V3
-  * Mode Switch
-  * On/Off Labels
-    Left: Turn On
-    Right: Text Off
 - Tab Octagon icon 
   * Tap email to send Auth Token (We will use later)
   
