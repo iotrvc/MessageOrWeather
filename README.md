@@ -42,27 +42,22 @@ Sensor Pin  | Photon Pin
   * Tap email to send Auth Token (We will use later)
   
 
-### Step 4: Create a WebHook
+### Step 4: Create a Weather WebHook
 
+- Go to https://openweathermap.org/api and sign-up
+- Check email for your API & Copy
 - Go to https://console.particle.io/integrations 
 - Click on New Integration
-- Change "Request Format" JSON
 - Click WebHook > CUSTOM TEMPLATE
 - Paste below text and replace user and token with above user key and API Token
 ```
 {
-    "event": "exceedlight",
-    "url": "https://api.pushover.net/1/messages.json",
-    "requestType": "POST",
+    "event": "temp",
+    "url": "http://api.openweathermap.org/data/2.5/weather?q=Rockford,US&APPID=YOURAPIGOESHERE=imperial",
+    "requestType": "GET",
     "noDefaults": false,
-    "rejectUnauthorized": false,
-    "json": true,
-    "query": {
-        "user": "YOUR_USER_KEY",
-        "token": "YOUR_API_TOKEN_KEY",
-        "title": "Exceed Light",
-        "message": "{{SPARK_EVENT_VALUE}}"
-    }
+    "rejectUnauthorized": true,
+    "responseTemplate": "Rockford Temp: {{main.temp}}"
 }
 ```
 
@@ -73,55 +68,166 @@ Sensor Pin  | Photon Pin
 ### Step 5: Create Particle App
 
 - Go to https://build.particle.io/build/new 
-- Title: LightDetect
+- Title: LED
 - Paste Below Code
 ```
-int led = D7; // This is where your can use can plug in a different LED. The other side should go to a resistor connected to GND.
 
-int photoresistor = A0; // This is where your photoresistor is plugged in. The other side goes to the "power" pin (refer to diagram).
+// This #include statement was automatically added by the Particle IDE.
+#include <blynk.h>
 
-int power = A5; // This is the other end of your photoresistor. The other side is plugged into the "photoresistor" pin (above).
-// The reason we have plugged one side into an analog pin instead of to "power" is because we want a very steady voltage to be sent to the photoresistor.
-// That way, when we read the value from the other side of the photoresistor, we can accurately calculate a voltage drop.
+// This #include statement was automatically added by the Particle IDE.
+#include <ledmatrix-max7219-max7221.h>
 
-int analogvalue; // Here we are declaring the integer variable analogvalue, which we will use later to store the value of the photoresistor.
+// Simple LED Matrix Display with Blynk and Weather Integration 
+// Uses 4x MAX7219 Dot Matrix Modules to display messages
+// Make sure you add these two libraries using the Particle IDE
+
+
+char auth[] = "BLYNKCODE"; // Put your blynk token here
+
+LEDMatrix *led;
+
+int bitmapWidth = 8;   // 8 is default
+int webcount = 900001;   // timer to run the weather webhook every 15 minutes
+
+String text = "Hello World";   // default string for display
+String text2 = "No Texts";  //  default string for Blynk texts
+String text3 = ""; // default string for weather
+String tb = "    ";
+
+
+int mode = 0;
+int sleepTime = 60;
+int textLength = text.length();
+
+// default position of the text is outside and then scrolls left
+int textX = bitmapWidth;
+int fontWidth = 5, space = 1;
+
+void drawText(String s, int x)
+{
+  int y = 0;
+  for(int i = 0; i < s.length(); i++) {
+    // Adafruit_GFX method
+    led->drawChar(x + i*(fontWidth+space), y, s[i], true, false, 1);
+  }
+}
+
+
+
 
 void setup() {
+  Blynk.begin(auth);   // setup Blynk 
+  // setup pins and library
+  // 1 display per row, 1 display per column
+  // optional pin settings - default: CLK = A0, CS = A1, D_OUT = A2
+  // (pin settings is independent on HW SPI)
+  //led->setIntensity(0,8);
+  led = new LEDMatrix(4, 1, D1, D2, D3); // my pins vary from the default
+  // > add every matrix in the order in which they have been connected <
+  // the first matrix in a row, the first matrix in a column
+  // vertical orientation (-90°) and no mirroring - last three args optional
+  // the Wangdd22 Matrix has 4 matrix elements, arranged side-by-side
+  led->addMatrix(3, 0, 0, false, false);
+  led->addMatrix(2, 0, 0, false, false);
+  led->addMatrix(1, 0, 0, false, false);
+  led->addMatrix(0, 0, 0, false, false);
+  
+  Particle.subscribe("hook-response/temp", gotWeatherData, MY_DEVICES);   // see particle.io tutorial on weather webhooks
+   // This essentially starts the I2C bus
+}
 
-    // First, declare all of our pins. This lets our device know which ones will be used for outputting voltage, and which ones will read incoming voltage.
-    pinMode(led,OUTPUT); // Our LED pin is output (lighting up the LED)
-    pinMode(photoresistor,INPUT);  // Our photoresistor pin is input (reading the photoresistor)
-    pinMode(power,OUTPUT); // The pin powering the photoresistor is output (sending out consistent power)
+BLYNK_CONNECTED() {
+    Blynk.syncAll();
+}
 
-    // Next, write one pin of the photoresistor to be the maximum possible, so that we can use this for power.
-    digitalWrite(power,HIGH);
+// In the Blynk app, I used the Termianl widget on virtual pin V1 to send text messages for display.  
+BLYNK_WRITE(V3){
+    int Power = param.asInt();
+      if (Power == 3) {
+           led->shutdown(true);
+    // free memory
+    delete led;
+    led = NULL;
+         mode = 2;
+      }
+}
 
-    // We are going to declare a Particle.variable() here so that we can access the value of the photoresistor from the cloud.
-    Particle.variable("analogvalue", &analogvalue, INT);
-    // This is saying that when we ask the cloud for "analogvalue", this will reference the variable analogvalue in this app, which is an integer variable.
+BLYNK_WRITE(V1) {
+   String cmd = param[0].asStr();
+   text2 = cmd;
+   Particle.publish("Message",text2,PRIVATE); 
+}
 
+// In the Blynk app, I used V2 as a button to toggle mode between weather and texts.
+BLYNK_WRITE(V2){
+    mode = param.asInt();
+    if (mode == 0){
+         Particle.publish("temp"); 
+    }
+}
+
+// This collects data from my get_weather webhook, AccuWeather data in my example.  See the photon tutorial on webhooks to get other data.  https://docs.particle.io/tutorials/integrations/webhooks/
+
+void gotWeatherData(const char *name, const char *data) {
+    text3 = String(data);
+      Particle.publish("Weather",text3,PRIVATE); 
 }
 
 void loop() {
+    Blynk.run();   
 
-    // check to see what the value of the photoresistor is and store it in the int variable analogvalue
-    analogvalue = analogRead(photoresistor);
-
-
-    if(analogvalue>=5){ //play with this number
-      delay(100);
-      char buf[200]; // need a buffer for that
-      sprintf(buf,"%d",analogvalue);
-      const char* p = buf;
-      Particle.publish("light",buf,60,PRIVATE);
-        digitalWrite(led, HIGH);
-        Spark.publish("Light_limit","Exceeded",60,PRIVATE);
-        Particle.publish("exceedlight", "Light Value is Exceeded", 60, PRIVATE);
-        delay(5000); //delay for LED
-        digitalWrite(led, LOW);
-        delay(10000); //10 second gap for each observation
-        // Add a delay to prevent getting tons of emails from IFTTT
+    if (webcount > 900000) {    // fetch data via the webhook every 15 (900000) minutes
+        Particle.publish("temp"); 
+        webcount = 0;
     }
+
+// pick which text string will be displayed
+
+    if (mode == 0) {
+        text = text3;
+        text = tb + text;
+        textLength = text.length();
+    }    
+    
+    if (mode == 1) {
+        text = text2;
+        text = tb + text;
+        textLength = text.length();
+    }
+    if (mode == 2) {
+    // here it does not work
+      System.sleep(SLEEP_MODE_DEEP, sleepTime);
+    }
+    
+    
+    webcount = webcount + 1;
+    
+  if(led != NULL) {
+    drawText(text, textX--);
+    // text animation is ending when the whole text is outside the bitmap
+    if(textX < textLength*(fontWidth+space)*(-1)) {
+      // set default text position
+      textX = bitmapWidth;
+      // show heart
+      led->flush();
+      delay(800);   // 1000 is default
+      // turn all pixels off (takes effect after led->flush())
+      led->fillScreen(false);
+    }
+    // draw text
+    led->flush();
+    delay(5);   // 125 is default 
+  }
+  // animations end
+  else if (led != NULL) {
+    // shutdown all displays
+    led->shutdown(true);
+    // free memory
+    delete led;
+    led = NULL;
+  }
+
 }
 
 
@@ -129,9 +235,11 @@ void loop() {
 - Click Save
 - Click Flash
 
-That’s It! You should now see notifications when light is exceeded
+That’s It! You should now be able to comntrol LED with Blynk App
 
-If all goes well, the D7 LED on your Photon should light up when light is exceeded. 
+Text = type messaage
+Weather = View Rockford Weather
+Turn Off = Put in low power mode for 5 minutes
 
 
 
