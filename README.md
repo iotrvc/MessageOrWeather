@@ -28,14 +28,15 @@ Sensor Pin  | Photon Pin
 ```
 #### Set up the hardware
 
-<img src="ytql18cMRfuZ10OypBj6Pw.jpg" width="500">
+<img src="20171017_220405_ENIY5oDfZ1.jpg" width="500">
 <br>
 <hr>
 
 ### Step 3: Setup BLYNK APP
 
 - Download iOS or Android App and setup account on BLYNK (link)[https://blynk.io/en/getting-started]
-
+<img src="IMG_B2025C952C3F-1.jpeg" width="500">
+<br>
 - Tab Octagon icon 
   * Tap email to send Auth Token (We will use later)
   
