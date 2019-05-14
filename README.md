@@ -201,7 +201,7 @@ void loop() {
         textLength = text.length();
     }
     if (mode == 2) {
-    // here it does not work
+    // shutdown in sleepmode for 60 seconds
       System.sleep(SLEEP_MODE_DEEP, sleepTime);
     }
     
@@ -248,7 +248,7 @@ Text = type messaage
 
 Weather = View Rockford Weather
 
-Turn Off = Put in low power mode for 5 minutes
+Turn Off = Put in low power mode for 1 minute
 
 
 
