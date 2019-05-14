@@ -73,7 +73,7 @@ Sensor Pin  | Photon Pin
 ### Step 5: Create Particle App
 
 - Go to https://build.particle.io/build/new 
-- Title: LED
+- Title: Remote_LED_Message_Center
 - Add Library: blynk
 - Add Library: ledmatrix-max7219-max7221
 - Paste Below Code
