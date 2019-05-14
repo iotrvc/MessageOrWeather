@@ -74,7 +74,8 @@ Sensor Pin  | Photon Pin
 
 - Go to https://build.particle.io/build/new 
 - Title: LED
-- Add Libraries blynk and ledmatrix-max7219-max7221
+- Add Library: blynk
+- Add Library: ledmatrix-max7219-max7221
 - Paste Below Code
 
 
