@@ -18,6 +18,7 @@ Required Parts:
 
 ### Step 2: Connect Photo Sensor & Resistor to Photon
 - Connect your sensor to a digital or analog input on the Photon. Follow these examples for hooking up common sensors.
+
 ```
 Sensor Pin  | Photon Pin
        VCC | VIN
@@ -25,7 +26,9 @@ Sensor Pin  | Photon Pin
        CLK | D1 
        CS  | D2 
        DN  | D3 
+       
 ```
+
 #### Set up the hardware
 
 <img src="20171017_220405_ENIY5oDfZ1.jpg" width="500">
@@ -50,6 +53,7 @@ Sensor Pin  | Photon Pin
 - Click on New Integration
 - Click WebHook > CUSTOM TEMPLATE
 - Paste below text and replace user and token with above user key and API Token
+
 ```
 {
     "event": "temp",
@@ -59,6 +63,7 @@ Sensor Pin  | Photon Pin
     "rejectUnauthorized": true,
     "responseTemplate": "Rockford Temp: {{main.temp}}"
 }
+
 ```
 
 - Click Create WebHook
