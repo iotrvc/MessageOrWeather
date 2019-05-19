@@ -5,11 +5,8 @@ Required Parts:
 <br>- LED Module [link](https://www.amazon.com/gp/product/B01EJ1AFW8/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 <br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 
-### RESET PHOTONS
-[reset photon](https://docs.particle.io/tutorials/device-os/led/core/#safe-mode)
-
-### RESET WIFI
-[reset wifi](https://docs.particle.io/tutorials/device-os/led/core/#wi-fi-network-reset)
+### RESET PHOTON (SAFE MODE & WIFI) 
+[reset photon](https://iotrvc.github.io/reset/)
 
 ### Step 1: Set up your Photon
 - Using Your Computer: Go to particle.io/setup and follow the instructions to create an account and set up your Photon.
