@@ -79,7 +79,7 @@ Sensor Pin  | Photon Pin
 - Paste Below Code
 
 
-```
+```cpp
 
 // This #include statement was automatically added by the Particle IDE.
 #include <blynk.h>
