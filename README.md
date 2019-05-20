@@ -54,17 +54,17 @@ Sensor Pin  | Photon Pin
 - Click WebHook > CUSTOM TEMPLATE
 - Paste below text and replace user and token with above user key and API Token
 
-```
-{
-    "event": "temp",
-    "url": "http://api.openweathermap.org/data/2.5/weather?q=Rockford,US&APPID=YOURAPIGOESHERE=imperial",
-    "requestType": "GET",
-    "noDefaults": false,
-    "rejectUnauthorized": true,
-    "responseTemplate": "Rockford Temp: {{main.temp}}"
-}
 
-```
+{<br>
+    "event": "temp",<br>
+    "url": "http://api.openweathermap.org/data/2.5/weather?q=Rockford,US&APPID=YOURAPIGOESHERE=imperial",<br>
+    "requestType": "GET",<br>
+    "noDefaults": false,<br>
+    "rejectUnauthorized": true,<br>
+    "responseTemplate": "Rockford Temp: {{main.temp}}"<br>
+}<br>
+
+
 
 - Click Create WebHook
 
