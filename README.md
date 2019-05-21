@@ -232,17 +232,20 @@ void loop() {
 
 ```
 
+#### REMOTE_LED_MESSAGE
+Get App Code: <a href="https://go.particle.io/shared_apps/5ce42a68d1a77e0005c05ffa" target="blank">Click Here</a>
+
 
 - Click Save
 - Click Flash
 
 That’s It! You should now be able to comntrol LED with Blynk App
 
-Text = type messaage
+Tap "Text" Button = type message in Ternminal and Send
 
-Weather = View Rockford Weather
+Tap "Weather" Button = View Rockford Weather
 
-Turn Off = Put in low power mode for 1 minute
+Tap "Turn Off" = Put in low power mode for 1 minute
 
 
 
