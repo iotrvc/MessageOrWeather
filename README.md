@@ -248,4 +248,5 @@ Tap "Weather" Button = View Rockford Weather
 Tap "Turn Off" = Put in low power mode for 1 minute
 
 
-
+### TROUBLESHOOTING STEPS
+<a href="https://iotrvc.github.io/troubleshooting/" target="blank">Click Here For TroubleShooting Steps</a>
