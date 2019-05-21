@@ -5,16 +5,9 @@ Required Parts:
 <br>- LED Module [link](https://www.amazon.com/gp/product/B01EJ1AFW8/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 <br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 
-### RESET PHOTON (SAFE MODE & WIFI) 
-[reset photon](https://iotrvc.github.io/reset/)
+### Step 1: SETUP WIFI & RESET PHOTON
 
-### Step 1: Set up your Photon
-- Using Your Computer: Go to particle.io/setup and follow the instructions to create an account and set up your Photon.
-- Using Your Phone & Download the Particle Mobile App [iPhone](https://itunes.apple.com/us/app/particle-build-photon-electron/id991459054?ls=1&mt=8) & [Android](https://play.google.com/store/apps/details?id=io.particle.android.app) to create an account and set up your Photon.
-
-<img src="1.jpg" width="500">
-
-<hr>
+<a href="https://iotrvc.github.io/reset/" target="blank">Click Here</a>
 
 ### Step 2: Connect Photo Sensor & Resistor to Photon
 - Connect your sensor to a digital or analog input on the Photon. Follow these examples for hooking up common sensors.
