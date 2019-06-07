@@ -58,7 +58,7 @@ Sensor Pin  | Photon Pin
 }<br>
 
 
-
+- Select 'WebHook Builder' tab and select Device: Any
 - Click Create WebHook
 
 <hr>
