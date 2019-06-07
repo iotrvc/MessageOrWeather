@@ -233,7 +233,7 @@ void loop() {
 ```
 
 #### REMOTE_LED_MESSAGE
-Get App Code: <a href="https://go.particle.io/shared_apps/5ce42a68d1a77e0005c05ffa" target="blank">Click Here</a>
+Get App Code: <a href="https://go.particle.io/shared_apps/5cfaf94033be4a0017ba1a20" target="blank">Click Here</a>
 
 
 - Click Save
