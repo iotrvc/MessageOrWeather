@@ -85,22 +85,22 @@ Sensor Pin  | Photon Pin
 // Make sure you add these two libraries using the Particle IDE
 
 
-char auth[] = "BLYNKCODE"; // Put your blynk token here
+char auth[] = "BLYNKTOKEN"; // Put your blynk token here
 
 LEDMatrix *led;
 
 int bitmapWidth = 8;   // 8 is default
 int webcount = 900001;   // timer to run the weather webhook every 15 minutes
 
-String text = "Hello World";   // default string for display
-String text2 = "No Texts";  //  default string for Blynk texts
-String text3 = ""; // default string for weather
-String tb = "    ";
+String strDefault = "Hello World";   // default string for display
+String strText = "Hello RVCIOT Class";  //  default string for Blynk texts
+String strWeather = ""; // default string for weather
+String tb = "    ";//tab space for LED
 
 
 int mode = 0;
 int sleepTime = 60;
-int textLength = text.length();
+int textLength = strDefault.length();
 
 // default position of the text is outside and then scrolls left
 int textX = bitmapWidth;
@@ -114,6 +114,9 @@ void drawText(String s, int x)
     led->drawChar(x + i*(fontWidth+space), y, s[i], true, false, 1);
   }
 }
+
+
+
 
 void setup() {
   Blynk.begin(auth);   // setup Blynk 
@@ -154,8 +157,8 @@ BLYNK_WRITE(V3){
 
 BLYNK_WRITE(V1) {
    String cmd = param[0].asStr();
-   text2 = cmd;
-   Particle.publish("Message",text2,PRIVATE); 
+   strText = cmd;
+   Particle.publish("Message",strText,PRIVATE); 
 }
 
 // In the Blynk app, I used V2 as a button to toggle mode between weather and texts.
@@ -169,8 +172,8 @@ BLYNK_WRITE(V2){
 // This collects data from my get_weather webhook, AccuWeather data in my example.  See the photon tutorial on webhooks to get other data.  https://docs.particle.io/tutorials/integrations/webhooks/
 
 void gotWeatherData(const char *name, const char *data) {
-    text3 = String(data);
-      Particle.publish("Weather",text3,PRIVATE); 
+    strWeather = String(data);
+      Particle.publish("Weather",strWeather,PRIVATE); 
 }
 
 void loop() {
@@ -184,18 +187,18 @@ void loop() {
 // pick which text string will be displayed
 
     if (mode == 0) {
-        text = text3;
-        text = tb + text;
-        textLength = text.length();
+        strDefault = strWeather;
+        strDefault = tb + strDefault;
+        textLength = strDefault.length();
     }    
     
     if (mode == 1) {
-        text = text2;
-        text = tb + text;
-        textLength = text.length();
+        strDefault = strText;
+        strDefault = tb + strDefault;
+        textLength = strDefault.length();
     }
     if (mode == 2) {
-    // shutdown in sleepmode for 60 seconds
+    // here it does not work
       System.sleep(SLEEP_MODE_DEEP, sleepTime);
     }
     
@@ -203,7 +206,7 @@ void loop() {
     webcount = webcount + 1;
     
   if(led != NULL) {
-    drawText(text, textX--);
+    drawText(strDefault, textX--);
     // text animation is ending when the whole text is outside the bitmap
     if(textX < textLength*(fontWidth+space)*(-1)) {
       // set default text position
