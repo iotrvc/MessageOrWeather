@@ -27,7 +27,7 @@ Sensor Pin  | Photon Pin
 <br>
 <img src="2.png" width="500">
 <br>
-<img src="3.png" width="500">
+<img src="33.png" width="500">
 <br>
 <hr>
 
