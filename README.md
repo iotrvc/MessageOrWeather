@@ -23,7 +23,11 @@ Sensor Pin  | Photon Pin
 
 #### Set up the hardware
 
-<img src="20171017_220405_ENIY5oDfZ1.jpg" width="500">
+<img src="1.png" width="500">
+<br>
+<img src="2.png" width="500">
+<br>
+<img src="3.png" width="500">
 <br>
 <hr>
 
