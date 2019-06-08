@@ -37,9 +37,9 @@ Sensor Pin  | Photon Pin
 <img src="IMG_B2025C952C3F-1.jpeg" width="500">
 <br>
 - Tab Octagon icon 
-  * Add Photon Device
   * Tap email to send Auth Token (We will use later)
-  
+  <img src="4.png" width="500">
+<br>
 
 ### Step 4: Create a Weather WebHook
 
@@ -88,7 +88,7 @@ Sensor Pin  | Photon Pin
 // Make sure you add these two libraries using the Particle IDE
 
 
-char auth[] = "BLYNKTOKEN"; // Put your blynk token here
+char auth[] = "BLYNKTOKEN"; // Check Your Email and Put your blynk token here from STEP 3 ABOVE
 
 LEDMatrix *led;
 
