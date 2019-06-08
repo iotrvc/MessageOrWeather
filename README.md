@@ -247,11 +247,13 @@ Get App Code: <a href="https://go.particle.io/shared_apps/5cfaf94033be4a0017ba1a
 
 That’s It! You should now be able to comntrol LED with Blynk App
 
-Tap "Text" Button = type message in Ternminal and Send
+- Tap "Text" Button > type message in Ternminal where you see 'Type here' and tap Send button
 
-Tap "Weather" Button = View Rockford Weather
+- Tap "Weather" Button > View Rockford Weather 
 
-Tap "Turn Off" = Put in low power mode for 1 minute
+- Tap "Turn Off" Button > Put in low power mode for 1 minute
+
+- Tap "Turn On" Button > Turn on LED after 1 minute
 
 
 ### TROUBLESHOOTING STEPS
