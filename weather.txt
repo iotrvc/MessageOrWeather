@@ -1,0 +1,8 @@
+{
+"event": "temp",
+"url": "http://api.openweathermap.org/data/2.5/weather?q=ROCKFORD,US&APPID=YOURAPIGOESHERE&units=imperial",
+"requestType": "GET",
+"noDefaults": false,
+"rejectUnauthorized": true,
+"responseTemplate": "Rockford Temp: {{main.temp}}"
+}
