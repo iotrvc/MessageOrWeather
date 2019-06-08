@@ -36,8 +36,8 @@ Sensor Pin  | Photon Pin
 - Download iOS or Android App and setup account on BLYNK (link)[https://blynk.io/en/getting-started]
 <img src="IMG_B2025C952C3F-1.jpeg" width="500">
 <br>
-- Tab Octagon icon 
-- Tap E-Mail button to send Auth Token (See picture below)
+- Tab Octagon icon <br>
+- Tap E-Mail button to send Auth Token (See picture below)<br>
   <img src="4.png" width="500">
 <br>
 
