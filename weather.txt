@@ -1,3 +1,5 @@
+Copy ONLY lines 3-10
+
 {
 "event": "temp",
 "url": "http://api.openweathermap.org/data/2.5/weather?q=ROCKFORD,US&APPID=YOURAPIGOESHERE&units=imperial",
@@ -6,3 +8,6 @@
 "rejectUnauthorized": true,
 "responseTemplate": "Rockford Temp: {{main.temp}}"
 }
+
+
+//Other temp data: {{weather.0.description}}
