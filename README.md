@@ -48,18 +48,8 @@ Sensor Pin  | Photon Pin
 - Go to [https://console.particle.io/integrations](https://console.particle.io/integrations)
 - Click on New Integration
 - Click WebHook > CUSTOM TEMPLATE
-- Paste below text and replace user and token with above user key and API Token
+- Get [text](https://raw.githubusercontent.com/iotrvc/MessageOrWeather/master/weather.txt) and replace user and token with above user key and API Token
 
-<br>
-{<br>
-    "event": "temp",<br>
-    "url": "http://api.openweathermap.org/data/2.5/weather?q=ROCKFORD,US&APPID=YOURAPIGOESHERE&units=imperial",<br>
-    "requestType": "GET",<br>
-    "noDefaults": false,<br>
-    "rejectUnauthorized": true,<br>
-    "responseTemplate": "Rockford Temp: {{main.temp}}"<br>
-}<br>
-<br>
 
 - Select 'WebHook Builder' tab and select Device: Any
 - Click Create WebHook
