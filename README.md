@@ -33,7 +33,7 @@ Sensor Pin  | Photon Pin
 
 ### Step 3: Setup BLYNK APP
 
-- Download iOS or Android App and setup account on BLYNK (link)[https://blynk.io/en/getting-started]
+- Download iOS or Android App and setup account on BLYNK [link](https://blynk.io/en/getting-started)
 <img src="IMG_B2025C952C3F-1.jpeg" width="500">
 <br>
 - Tab Octagon icon <br>
