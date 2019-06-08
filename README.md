@@ -44,11 +44,11 @@ Sensor Pin  | Photon Pin
 ### Step 4: Create a Weather WebHook
 
 - Go to [https://openweathermap.org/api](https://openweathermap.org/api) and sign-up
-- Check email for your API & Copy
+- Check email for your API & Copy (could take two hours to be ready to use)
 - Go to [https://console.particle.io/integrations](https://console.particle.io/integrations)
 - Click on New Integration
 - Click WebHook > CUSTOM TEMPLATE
-- Get [text](https://raw.githubusercontent.com/iotrvc/MessageOrWeather/master/weather.txt) and replace user and token with above user key and API Token
+- Copy [text](https://raw.githubusercontent.com/iotrvc/MessageOrWeather/master/weather.txt) and replace YOURAPIGOESHERE with your API Token
 
 
 - Select 'WebHook Builder' tab and select Device: Any
