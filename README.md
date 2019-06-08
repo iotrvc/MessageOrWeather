@@ -59,7 +59,7 @@ Sensor Pin  | Photon Pin
     "rejectUnauthorized": true,<br>
     "responseTemplate": "Rockford Temp: {{main.temp}}"<br>
 }<br>
-
+<br>
 
 - Select 'WebHook Builder' tab and select Device: Any
 - Click Create WebHook
