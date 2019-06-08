@@ -37,7 +37,7 @@ Sensor Pin  | Photon Pin
 <img src="IMG_B2025C952C3F-1.jpeg" width="500">
 <br>
 - Tab Octagon icon 
-  * Tap email to send Auth Token (We will use later)
+- Tap E-Mail button to send Auth Token (See picture below)
   <img src="4.png" width="500">
 <br>
 
