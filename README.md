@@ -6,6 +6,7 @@ Required Parts:
 <br>- Particle Photon
 <br>- LED Module [link](https://www.amazon.com/gp/product/B01EJ1AFW8/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 <br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
+<br>- 5 Male/Male Wires
 
 ### Step 1: SETUP WIFI & RESET PHOTON
 
