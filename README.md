@@ -18,9 +18,9 @@ Required Parts:
 ```
 Sensor Pin  | Photon Pin
        VCC | VIN  - BROWN
-       GND | GND  - RED
-       DIN | D3   - YELLOW
-       CS  | D2   - TEAL
+       GND | GND  - BLUE
+       DIN | D3   - TEAL
+       CS  | D2   - YELLOW
        CLK | D1   - ORANGE
 ```
 
