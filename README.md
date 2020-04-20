@@ -26,9 +26,9 @@ Sensor Pin  | Photon Pin
 
 #### Set up the hardware
 
-<img src="1.png" width="500">
+<img src="1.JPG" width="500">
 <br>
-<img src="2.png" width="500">
+<img src="2.JPG" width="500">
 <br>
 <img src="33.png" width="500">
 <br>
