@@ -4,5 +4,5 @@
 "requestType": "GET",
 "noDefaults": false,
 "rejectUnauthorized": true,
-"responseTemplate": "Rockford Temp:  {{main.temp}} {{weather.0.description}}"
+"responseTemplate": "Rockford Temp:  {{main.temp}} Current Condition: {{weather.0.description}}"
 }
