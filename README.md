@@ -5,7 +5,7 @@
 Required Parts:
 <br>- Particle Photon
 <br>- LED Module [link](https://www.amazon.com/gp/product/B01EJ1AFW8/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
-<br>- 5 Male/Male Wires
+<br>- Female/Female Wires
 <br>- OPTIONAL: PowerShield (Battery) [link](https://www.amazon.com/gp/product/B06XJ64G8G/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
 
 ### Step 1: SETUP WIFI & RESET PHOTON
@@ -17,11 +17,11 @@ Required Parts:
 
 ```
 Sensor Pin  | Photon Pin
-       VCC | VIN  - WHITE
-       GND | GND  - BLACK
-       DIN | D3   - GREY
-       CS  | D2   - BURGUNDY
-       CLK | D1   - BLUE
+       VCC | VIN  - First Wire
+       GND | GND  - Second Wire
+       DIN | D3   - Third Wire
+       CS  | D2   - Fourth Wire
+       CLK | D1   - Fifth Wire
 ```
 
 #### Set up the hardware
